@@ -18,6 +18,8 @@ filter_by_continent <- function(data, continent_selection) {
   }
 }
 
+continent_choices <- c("World", as.character(unique(data$continent)))
+
 # Definir la UI
 ui <- fluidPage(
   theme = shinytheme("flatly"),
@@ -64,7 +66,7 @@ ui <- fluidPage(
       div(
         style = "margin-top: 100px; display: flex; flex-direction: column; justify-content: center;",
         selectInput("mapa", "Select a continent:",
-                    choices = c("World", as.character(unique(data$continent))),
+                    choices = continent_choices,
                     selected = "World"),
         plotlyOutput("map", height = "400px")
         ),
@@ -73,7 +75,7 @@ ui <- fluidPage(
       div(
         style = "margin-top: 150px; display: flex; flex-direction: column; justify-content: center;",
         selectInput("timeline", "Select a continent:",
-                    choices = c("World", as.character(unique(data$continent))),
+                    choices = continent_choices,
                     selected = "World"),
         plotOutput("timeline", height = "400px")
         ),
@@ -82,7 +84,7 @@ ui <- fluidPage(
       div(
         style = "margin-top: 150px; display: flex; flex-direction: column; justify-content: center;",
         selectInput("bar1", "Select a continent:",
-                    choices = c("World", as.character(unique(data$continent))),
+                    choices = continent_choices,
                     selected = "World"),
         plotOutput("bar1", height = "400px")
         ),
@@ -91,7 +93,7 @@ ui <- fluidPage(
       div(
         style = "margin-top: 150px; display: flex; flex-direction: column; justify-content: center;",
         selectInput("bar2", "Select a continent:",
-                    choices = c("World", as.character(unique(data$continent))),
+                    choices = continent_choices,
                     selected = "World"),
         plotOutput("bar2", height = "400px")
         ),
@@ -100,7 +102,7 @@ ui <- fluidPage(
       div(
         style = "margin-top: 150px; display: flex; flex-direction: column; justify-content: center;",
         selectInput("bar3", "Select a continent:",
-                    choices = c("World", as.character(unique(data$continent))),
+                    choices = continent_choices,
                     selected = "World"),
         plotOutput("bar3", height = "400px")
         ),
@@ -109,7 +111,7 @@ ui <- fluidPage(
       div(
         style = "margin-top: 150px; display: flex; flex-direction: column; justify-content: center;",
         selectInput("stack", "Select a continent:",
-                    choices = c("World", as.character(unique(data$continent))),
+                    choices = continent_choices,
                     selected = "World"),
         plotOutput("stack", height = "400px")
         )
