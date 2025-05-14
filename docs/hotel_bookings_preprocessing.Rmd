@@ -1,0 +1,83 @@
+---
+title: "Tracking the Origins of Global Tourism"
+author: "Eric Farran Moreno"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE)
+```
+
+```{r}
+# Packages
+if (!require('readr')) install.packages('readr'); library('readr')
+if (!require('dplyr')) install.packages('dplyr'); library('dplyr')
+if (!require('lubridate')) install.packages('lubridate'); library('lubridate')
+if (!require('countrycode')) install.packages('countrycode'); library('countrycode')
+```
+
+```{r}
+# Data preprocessing
+  # CONFIGURATION
+  MIN_RESERVATIONS <- 100
+  MAX_ADULTS <- 4
+  MAX_CHILDREN <- 3
+  MAX_BABIES <- 2
+  
+  # MAIN CODE
+  data <- read.csv("hotel_bookings.csv", stringsAsFactors = TRUE) %>%
+    mutate(
+      continent = countrycode(country, "iso3c", "continent", warn = TRUE, nomatch = NA),
+      arrival_weekday = wday(as_date(paste(arrival_date_year, 
+                                           match(arrival_date_month, month.name), 
+                                           arrival_date_day_of_month)), 
+                             week_start = 1),
+      n_total = adults + children + babies
+    )
+  
+  data_clean <- data %>%
+    filter(
+      adults <= MAX_ADULTS,
+      children <= MAX_CHILDREN,
+      babies <= MAX_BABIES,
+      stays_in_weekend_nights + stays_in_week_nights > 0,
+      n_total > 0,
+      adr > 0
+    ) %>%
+    mutate(
+      type = case_when(
+        stays_in_weekend_nights == 0 ~ "work",
+        stays_in_week_nights == 0 | (stays_in_week_nights < 2 & arrival_weekday == 5) ~ "weekend",
+        arrival_date_month %in% c("June", "July", "August", "December", "January") & 
+          (stays_in_week_nights + stays_in_weekend_nights) >= 2 ~ "holidays",
+        stays_in_week_nights <= 5 & stays_in_weekend_nights < 3 ~ "work+rest",
+        TRUE ~ "rest"
+      )
+    )
+  
+  data <- data_clean %>%
+    filter(!is.na(continent)) %>%
+    group_by(country) %>%
+    filter(n() >= MIN_RESERVATIONS) %>%
+    ungroup() %>%
+    subset(select = c("hotel", "continent", "country", "arrival_date_month", "arrival_weekday", "type", "market_segment", "n_total")) %>%
+    mutate(
+      country = as.factor(countrycode(country, "iso3c", "country.name")),
+      across(where(is.character), as.factor),
+      arrival_date_month = factor(arrival_date_month,
+                               labels = c("January","February","March","April",
+                                          "May","June","July","August","September","October",
+                                          "November","December")),
+      arrival_weekday = factor(arrival_weekday, levels = 1:7, 
+                               labels = c("Monday","Tuesday","Wednesday","Thursday",
+                                          "Friday","Saturday","Sunday"))
+    )
+  
+  rm(data_clean, MAX_ADULTS, MAX_BABIES, MAX_CHILDREN, MIN_RESERVATIONS)
+  
+  glimpse(data)
+  
+  write.csv(data, "data.csv", row.names = FALSE)
+```
