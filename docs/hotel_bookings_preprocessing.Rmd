@@ -79,5 +79,5 @@ if (!require('countrycode')) install.packages('countrycode'); library('countryco
   
   glimpse(data)
   
-  write.csv(data, "data.csv", row.names = FALSE)
+  write.csv(data, "data/data.csv", row.names = FALSE)
 ```
