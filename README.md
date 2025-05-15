@@ -1,9 +1,9 @@
-# Visualització de Dades - PAC3: [tracking the origins of tourism in Portugal](https://e26vc3-eric-farran.shinyapps.io/pac3/)
+# Visualització de Dades - PAC3: [tracking the origins of Portugal tourism](https://e26vc3-eric-farran.shinyapps.io/pac3/)
 
 **Màster en Ciència de dades**
 *Universitat Oberta de Catalunya*
 
-Aquest repositori conté una aplicació interactiva desenvolupada en Shiny que explora l'origen i patrons dels turistes a POrtugal mitjançant visualitzacions de dades.<br>
+Aquest repositori conté una aplicació interactiva desenvolupada en Shiny que explora l'origen i patrons dels turistes a Portugal mitjançant visualitzacions de dades.<br>
 Aquesta aplicació forma part del lliurament de la PAC3 de l’assignatura de Visualització de Dades del Màster de Ciència de Dades de la Universitat Oberta de Catalunya (UOC).
 
 ## Continguts
