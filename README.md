@@ -3,12 +3,13 @@
 **Màster en Ciència de dades**
 *Universitat Oberta de Catalunya*
 
-Aquest repositori conté una narrativa visual desenvolupada mitjançant una aplicació Shiny en R. Aquesta aplicació forma part del lliurament de la PAC3 de l’assignatura de Visualització de Dades del Màster de Ciència de Dades de la Universitat Oberta de Catalunya (UOC).
+Aquest repositori conté una aplicació interactiva desenvolupada en Shiny que explora l'origen i patrons dels turistes globals mitjançant dades visuals. <br>
+Aquesta aplicació forma part del lliurament de la PAC3 de l’assignatura de Visualització de Dades del Màster de Ciència de Dades de la Universitat Oberta de Catalunya (UOC).
 
 ## Continguts
 
 - [Característiques](#característiques)
-- [Ús d'intel·ligències Artificals Generatives (IAGs)](#ús-d'Intel·ligències-Artificials-Generatives-(IAGs))
+- [Ús d'intel·ligències Artificals Generatives (IAGs)](#ús-d'intel·ligències-artificials-generatives-(IAGs))
 - [Execució](#execució)
 - [Llicència](#llicència)
 
@@ -18,24 +19,26 @@ Aquest repositori conté una narrativa visual desenvolupada mitjançant una apli
 - **Interactivitat**:
   - Filtratge per continent
   - Tooltips informatius
-- **Dades**: dataset de reserves hoteleres (hotel Booking)
+- **Documents**:
+  - Data original: hotel_booking.csv
+  - Data preprocessada: data.csv
+  - Script de preprocessament: hotel_booking_preprocessing.Rmd
+  - Aplicació: app.R
 - **Compatibilitat**: Compatible amb navegadors moderns (Chrome, Firefox, Edge) que suportin aplicacions Shiny
 
-## Ús d'Intel·ligències Artificials Generatives
+## Ús d'intel·ligències artificials generatives (IAGs)
 
-En cada una de les visualitzacions s'ha emprat tant **DeepSeek Chat** com **ChatGPT-4** com assistents a l'hora de generar l'estructuració del codi D3.js i optimitzar l'estil i rendiment de la visualització, influenciant en el 30% de la pràctica lliurada.
+En la narrativa visual s'ha emprat **ChatGPT-4** com assistent a l'hora de generar l'estructuració de l'aplicació Shiny en R i la consulta puntual en la construcció de les visualitzacions, amb una influència aproximada del 15% sobre la pràctica lliurada.
 
-L'autor ha estat l'encarregat d'elaborar el contingut teòric de la pràctica, supervisar les sugerències de les IAGs, completar el codi d'acord als requeriments de la narrativa i verificar el resultat final.<br>
+L'autor ha estat l'encarregat d'elaborar el contingut teòric de la pràctica, supervisar les suggerències de la IAG, completar el codi d'acord als requeriments de la narrativa i verificar el resultat final.<br>
 
-**Així doncs, les IAGs han actuat en tot moment només com a assistents. La responsabilitat sobre el disseny, la presa de decisions i el bon funcionament final recau exclusivament sobre l'autor del recurs.<br>
+**Així doncs, les IAGs han actuat en tot moment només com a assistents. La responsabilitat sobre el disseny, la presa de decisions i el bon funcionament de l'aplicació recau exclusivament sobre l'autor del recurs.<br>
 En cap cas les visualitzacions han estat generades de manera autònoma ni tampoc s'han emprat dades sensibles en la seva construcció.<br>
 Aquest ús està alineat amb les directrius de la UOC sobre IA generativa ([Guia de citació de IA](https://openaccess.uoc.edu/bitstream/10609/148823/1/U2_17_GuiaCitarIA_CAT.pdf)), garantint transparència i integritat en el procés.**
 
 ## Execució
-La narrativa visual és intuïtiva i interactiva. No es requereix cap instal·lació addicional i només cal accedir per l'[hipervincle](https://e26vc3-eric-farran.shinyapps.io/pac3/).
+La narrativa visual és intuïtiva i interactiva. No es requereix cap instal·lació addicional i per ser consultada només cal accedir a l'[aplicació web](https://e26vc3-eric-farran.shinyapps.io/pac3/).
 
 ## Llicència
 
 Aquest treball està sota llicència [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
-
-[https://e26vc3-eric-farran.shinyapps.io/pac3/](https://e26vc3-eric-farran.shinyapps.io/pac3/)
