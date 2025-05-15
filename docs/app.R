@@ -46,15 +46,15 @@ ui <- fluidPage(
         style = "margin-top: 30px; margin-bottom: 30px; display: flex; flex-direction: column; justify-content: center;",
         HTML("This interactive application allows you to explore global tourism trends, from the origins of travelers to key travel patterns. With a series of dynamic charts, we provide a comprehensive view of how tourists move around the world and how their travel habits vary by continent and season. Here’s what you can explore:<br><br>
       
-      <strong>Tourist Origins</strong> An interactive map showing the regions with the highest number of tourists. Europe stands out, with Portugal leading the way. This map helps you understand the main regions sending tourists abroad. <br><br>
+      <strong>Tourist Origins</strong> An interactive map showing the regions with the highest number of Portugal tourists. Europe stands out, with Portugal leading the way. This map helps you understand the main regions sending tourists abroad. <br><br>
       
       <strong>Monthly Trends</strong> A timeline chart illustrating tourist arrivals throughout the year. February and June are the peak months for travel, highlighting seasonal patterns. You can compare this data across continents to see global travel trends. <br><br>
       
-      <strong>Accommodation Preferences</strong> We also explore where tourists stay. The charts show a clear preference for city hotels over rural ones, likely due to convenience and proximity to attractions. <br><br>
+      <strong>Accommodation Preferences</strong> We also explore where tourists stay. The charts show a clear preference for city hotel over rural one, likely due to convenience and proximity to attractions. <br><br>
 
       <strong>Weekly Travel Habits</strong> A set of bar charts analyzing the days of the week when most tourists travel. Interestingly, Mondays are becoming popular for short getaways, as people prefer to extend their weekend or prepare for the workweek ahead. <br><br>
 
-      <strong>Market Segmentation & Accommodation</strong> Analyzing how market segments influence accommodation choices, we see that urban hotels are the top choice for most travelers, offering a variety of amenities and easy access to activities. <br><br>
+      <strong>Market Segmentation & Accommodation</strong> Analyzing how market segments influence accommodation choices, we see that urban hotel is the top choice for most travelers, offering a variety of amenities and easy access to activities. <br><br>
       
       This interactive platform lets you filter data by continent and compare trends across regions. Dive into the visualizations to gain a deeper understanding of global tourism and its evolving patterns.")
       ),
@@ -138,7 +138,7 @@ ui <- fluidPage(
       div(
         style = "margin-top: 230px; height: 400px; display: flex; flex-direction: column; justify-content: center;",
         h4(HTML("<strong>Holidays in the city</strong>")),
-        p("When it comes to holidays, most travelers choose cities over rural destinations. That can be because cities often offer better transportation, more entertainment options, and easy access to attractions, all of which make urban areas more appealing. While rural places may offer peace and natural beauty, tourists tend to prioritize convenience, variety, and comfort, which are easier to find in city settings.")
+        p("When it comes to holidays, most travelers choose city over rural destination. That can be because city often offer better transportation, more entertainment options, and easy access to attractions, all of which make urban area more appealing. While rural place may offer peace and natural beauty, tourists tend to prioritize convenience, variety, and comfort, which are easier to find in city settings.")
       ),
       
       # Bloc 4: Bar2
@@ -152,7 +152,7 @@ ui <- fluidPage(
       div(
         style = "margin-top: 230px; height: 400px; display: flex; flex-direction: column; justify-content: center;",
         h4(HTML("<strong>Urban preference: cities outshine villages in almost every market segment</strong>")),
-        p("The chart highlights a clear preference for city hotels over rural ones across nearly all market segments. Whether for convenience, amenities, or access to cultural attractions, cities offer the experiences that most travelers are seeking. Urban locations provide a variety of options, from business facilities to entertainment, making them the go-to choice for a wide range of tourists.")
+        p("The chart highlights a clear preference for city hotel over rural one across nearly all market segments. Whether for convenience, amenities, or access to cultural attractions, city offer the experiences that most travelers are seeking. Urban location provide a variety of options, from business facilities to entertainment, making them the go-to choice for a wide range of tourists.")
       ),
       
       # Bloc 6: stack
