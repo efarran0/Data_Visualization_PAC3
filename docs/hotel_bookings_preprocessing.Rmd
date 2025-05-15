@@ -27,7 +27,7 @@ if (!require('countrycode')) install.packages('countrycode'); library('countryco
   MAX_BABIES <- 2
   
   # MAIN CODE
-  data <- read.csv("hotel_bookings.csv", stringsAsFactors = TRUE) %>%
+  data <- read.csv("data/hotel_bookings.csv", stringsAsFactors = TRUE) %>%
     mutate(
       continent = countrycode(country, "iso3c", "continent", warn = TRUE, nomatch = NA),
       arrival_weekday = wday(as_date(paste(arrival_date_year, 
