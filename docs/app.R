@@ -242,13 +242,19 @@ server <- function(input, output) {
   
   output$bar2 <- renderPlot({
     df_filt <- df_bar2() %>%
-      mutate(arrival_weekday = factor(arrival_weekday, levels = weekday_levels))
+      mutate(arrival_weekday = factor(arrival_weekday, levels = weekday_levels)) %>%
+      group_by(arrival_weekday, type) %>%
+      summarise(n_tourists = sum(n_total), .groups = "drop") %>%
+      group_by(arrival_weekday) %>%
+      mutate(prop = n_tourists / sum(n_tourists))
     
     tit <- paste("Portugal tourist travel type composition by weekday -", input$bar2)
     
-    ggplot(df_filt, aes(x = arrival_weekday, fill = type, by = arrival_weekday)) +
-      stat_count(geom = "bar", position = "stack") +
-      geom_text(stat = "prop", position = position_stack(vjust = 0.5), color = "white", size = 3) +
+    ggplot(df_filt, aes(x = arrival_weekday, y = n_tourists, fill = type)) +
+      geom_bar(stat = "identity", position = "stack") +
+      geom_text(aes(label = scales::percent(prop, accuracy = 0.1)),
+                position = position_stack(vjust = 0.5),
+                color = "white", size = 3) +
       theme(axis.ticks.y = element_blank(), axis.text.y = element_blank()) +
       labs(x = "Day of week of arrival", y = "Tourists", title = tit) +
       theme_minimal() +
@@ -285,9 +291,7 @@ server <- function(input, output) {
     
     ggplot(df_filt, aes(x = arrival_date_month, y = n_tourists, fill = market_segment, group = market_segment)) +
       geom_area() +
-      labs(x = "Month of arrival",
-           y = "Tourists",
-           title = tit) +
+      labs(x = "Month of arrival", y = "Tourists", title = tit) +
       theme_minimal() +
       scale_x_discrete(guide = guide_axis(angle = 45))
   })
