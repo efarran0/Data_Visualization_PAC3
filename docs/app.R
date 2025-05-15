@@ -250,7 +250,7 @@ server <- function(input, output) {
       stat_count(geom = "bar", position = "stack") +
       geom_text(stat = "prop", position = position_stack(vjust = 0.5), color = "white", size = 3) +
       theme(axis.ticks.y = element_blank(), axis.text.y = element_blank()) +
-      labs(x = "Day of week of arrival", y = element_blank(), title = tit) +
+      labs(x = "Day of week of arrival", y = "Tourists", title = tit) +
       theme_minimal() +
       scale_fill_brewer(palette = "Set2")
   })
