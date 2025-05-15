@@ -1,5 +1,5 @@
 ---
-title: "Tracking the Origins of Global Tourism"
+title: "Tracking the origins of tourism in Portugal"
 author: "Eric Farran Moreno"
 date: "`r Sys.Date()`"
 output: html_document
