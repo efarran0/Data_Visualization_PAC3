@@ -3,13 +3,13 @@
 **Màster en Ciència de dades**
 *Universitat Oberta de Catalunya*
 
-Aquest repositori conté una aplicació interactiva desenvolupada en Shiny que explora l'origen i patrons dels turistes globals mitjançant dades visuals. <br>
+Aquest repositori conté una aplicació interactiva desenvolupada en Shiny que explora l'origen i patrons dels turistes globals mitjançant visualitzacions de dades. <br>
 Aquesta aplicació forma part del lliurament de la PAC3 de l’assignatura de Visualització de Dades del Màster de Ciència de Dades de la Universitat Oberta de Catalunya (UOC).
 
 ## Continguts
 
 - [Característiques](#característiques)
-- [Ús d'intel·ligències Artificals Generatives (IAGs)](#ús-d'intel·ligències-artificials-generatives-(IAGs))
+- [Ús d'intel·ligències Artificials Generatives (IAGs)](#ús-d'intel·ligències-artificials-generatives-(IAGs))
 - [Execució](#execució)
 - [Llicència](#llicència)
 
@@ -28,9 +28,9 @@ Aquesta aplicació forma part del lliurament de la PAC3 de l’assignatura de Vi
 
 ## Ús d'intel·ligències artificials generatives (IAGs)
 
-En la narrativa visual s'ha emprat **ChatGPT-4** com assistent a l'hora de generar l'estructuració de l'aplicació Shiny en R i la consulta puntual en la construcció de les visualitzacions, amb una influència aproximada del 15% sobre la pràctica lliurada.
+En la narrativa visual s'ha emprat **ChatGPT-4** com assistent a l'hora de generar l'estructuració de l'aplicació Shiny en R i la consulta puntual per a la construcció de les visualitzacions, amb una influència aproximada del 15% sobre la pràctica lliurada.
 
-L'autor ha estat l'encarregat d'elaborar el contingut teòric de la pràctica, supervisar les suggerències de la IAG, completar el codi d'acord als requeriments de la narrativa i verificar el resultat final.<br>
+L'autor ha estat l'encarregat d'elaborar el contingut teòric de la pràctica, supervisar els suggeriments de la IAG, completar el codi d'acord als requeriments de la narrativa i validar el resultat final.<br>
 
 **Així doncs, les IAGs han actuat en tot moment només com a assistents. La responsabilitat sobre el disseny, la presa de decisions i el bon funcionament de l'aplicació recau exclusivament sobre l'autor del recurs.<br>
 En cap cas les visualitzacions han estat generades de manera autònoma ni tampoc s'han emprat dades sensibles en la seva construcció.<br>
