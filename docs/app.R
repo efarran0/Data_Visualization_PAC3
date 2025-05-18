@@ -26,13 +26,13 @@ ui <- fluidPage(
   titlePanel(
     div(
       style = "text-align: center;",
-      HTML("<strong>Tracking the origins of Portgual tourism</strong>")
+      HTML("<strong>Tracking the origins of Portugal tourism</strong>")
     )
   ),
   
   div(
     style = "text-align: center; font-size: 15px; font-style: italic; margin-top: 20px; margin-bottom: 30px;",
-    HTML("Ever wondered where Portgual tourists come from? This platform lets you dive deep into Portgual tourism data, from bustling cities to hidden gems.")
+    HTML("Ever wondered where Portugal tourists come from? This platform lets you dive deep into Portugal tourism data, from bustling cities to hidden gems.")
   ),
   
   
@@ -210,7 +210,7 @@ server <- function(input, output) {
       group_by(arrival_date_month) %>%
       summarise(n_tourists = sum(n_total), .groups = "drop")
     
-    tit <- paste("Monthly Portgual tourist arrivals -", input$mapa)
+    tit <- paste("Monthly Portugal tourist arrivals -", input$mapa)
     
     ggplot(df_filt, aes(x = arrival_date_month, y = n_tourists, group = 1)) +
       geom_smooth(method = "loess", se = FALSE, color = "steelblue", linewidth = 1.2, span = 0.2) +
